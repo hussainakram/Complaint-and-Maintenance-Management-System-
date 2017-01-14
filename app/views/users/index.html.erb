@@ -1,0 +1,50 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-10">
+			<div>
+
+				<% @users.each do |user| %>
+					<table class="table table-bordered">
+						<tr>
+							<th>User ID</th>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>User Type</th>
+							<th>Email</th>
+							<th>Phone</th>
+							<th>Address</th>
+							<th>Profession</th>
+						</tr>
+						 <tr>
+						 	<td>
+						 		<%= link_to("#{user.id}",{ action: 'show', id: user.id}, class: 'individual btn btn-warning') %>
+						 	</td>
+							<td>
+								<%= user.first_name %>
+							</td>
+							<td>
+								<%=  user.last_name %>
+							</td>
+							<td>
+								<%=  user.user_type %>
+							</td>
+							<td>
+								<%= user.email %>
+							</td>
+							<td>
+								<%= user.phone %>
+							</td>
+							<td>
+								<%= user.address %>
+							</td>
+							<td>
+								<%= user.profession %>
+							</td>
+							</tr>
+							<br>
+					</table>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

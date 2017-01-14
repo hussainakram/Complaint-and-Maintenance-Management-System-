@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div><%= link_to("Go back",{ action: 'index' }, class: 'back-to-index btn btn-default') %>			
+			</div>
+			<div>
+				<%= form_for(:user, url: {action: 'update', id: @user.id}, method: :put) do |user| %>
+				<table class="table table-bordered">
+					<tr>
+						<th>First Name</th>
+						<td><%= user.text_field(:first_name) %></td>
+					</tr>
+					<tr>
+						<th>Last Name</th>
+						<td><%= user.text_field(:last_name) %></td>
+					</tr>
+					<tr>
+						<th>User Type</th>
+						<td><%= user.text_field(:user_type) %></td>
+					</tr>
+					<tr>
+						<th>Email</th>
+						<td><%= user.text_field(:email) %></td>
+					</tr>
+					<tr>
+						<th>Phone</th>
+						<td><%= user.text_field(:phone) %></td>
+					</tr>
+					<tr>
+						<th>Address</th>
+						<td><%= user.text_field(:address) %></td>
+					</tr>
+					<tr>
+						<th>Profession</th>
+						<td><%= user.text_field(:profession) %></td>
+					</tr>
+				</table>
+				<div class="form-button">
+					<%= submit_tag('Update Credentials') %> 
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

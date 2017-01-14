@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-5">
+			<div>
+				<%= form_for(:@items, :url => {:action => 'select_items'}) do |item| %>
+					<table class="table table-bordered">
+						<tr>
+							<th>Item Name</th>
+							<th>Cost</th>
+							
+						</tr>
+						<tr>
+							<td><%= item.text_field(:name) %></td>
+							<td><%= item.text_field(:cost) %></td>
+						</tr>
+						<tr>
+							<td><%= item.text_field(:name) %></td>
+							<td><%= item.text_field(:cost) %></td>
+						</tr>
+						<tr>
+							<td><%= item.text_field(:name) %></td>
+							<td><%= item.text_field(:cost) %></td>
+						</tr>
+						<tr>
+							<th>Total cost</th>
+							<td><%= item.text_field(:total_cost) %></td>
+						</tr>
+					</table>
+					<div class="form-button">
+						<%= submit_tag('Save') %> 
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-10">
+			<div>
+
+				<% @sdos.each do |sdo| %>
+					<table class="table table-bordered">
+						<tr>
+							<th>SDO ID</th>
+							<th>Full Name</th>
+							<th>Email</th>
+							<th>CNIC No</th>
+						</tr>
+						 <tr>
+						 	<td>
+						 		<div><%= link_to("#{sdo.id}",{:action => 'show', id: sdo.id}, :class => 'individual btn btn-warning') %>			
+						 		</div>
+						 	</td>
+							<td>
+								<%= sdo.name %>
+							</td>
+							<td>
+								<%= sdo.email %>
+							</td>
+							<td>
+								<%=  sdo.cnic %>
+							</td>
+							<br>
+					</table>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

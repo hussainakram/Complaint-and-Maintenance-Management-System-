@@ -1,0 +1,32 @@
+
+<div class="container">
+	<div class="row">
+		<caption><h3>Showing "<%= @complain.title %>" Details</h3></caption>
+		<div class="col-md-11">
+			<div><%= link_to("Go Back",{:action => 'index'}, :class => 'back-to-index btn btn-default') %>				
+			</div>
+			<table class="table tabel-hover table-bordered">
+				<th>Complaint ID</th>
+				<th>Title</th>
+				<th>Category</th>
+				<th>User ID</th>
+				<th>SDO ID</th>
+				<th>Worker ID</th>
+				<th>Status</th>
+				<th>Registered Date</th>
+				<th>Updated Date</th>
+				<tr>
+					<td><%= @complain.id %> </td>
+					<td><%= @complain.title %></td>
+					<td><%= @complain.category %></td>
+					<td><%= @complain.user.first_name %></td>
+					<td><%= @complain.sdo.name %></td>
+					<td><%= @complain.worker.full_name %></td>
+					<td><%= @complain.status %></td>
+					<td><%= @complain.created_at%></td>
+					<td><%= @complain.updated_at %></td>
+				</tr>
+			</table> 
+		</div>
+	</div>
+</div>

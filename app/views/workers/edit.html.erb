@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div><%= link_to("Go back",{:action => 'edit'}, :class => 'back-to-index btn btn-default') %>			
+			</div>
+			<div>
+				<%= form_for(:worker, url: {action: 'update', id: @worker.id}, method: :put) do |worker| %>
+				<table class="table table-bordered">
+					<tr>
+						<th>Full Name</th>
+						<td><%= worker.text_field(:full_name) %></td>
+					</tr>
+					<tr>
+						<th>Phone</th>
+						<td><%= worker.text_field(:phone) %></td>
+					</tr>
+				</table>
+				<div class="form-button">
+					<%= submit_tag('Update Credentials') %> 
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

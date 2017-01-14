@@ -1,0 +1,35 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-10">
+			<div>
+
+				<% @workers.each do |worker| %>
+					<table class="table table-bordered">
+						<tr>
+							<th>worker ID</th>
+							<th>Full Name</th>
+							<th>CNIC No</th>
+							<th>Phone</th>
+						</tr>
+						 <tr>
+						 	<td>
+						 		<div><%= link_to("#{worker.id}",{:action => 'show', id: worker.id}, :class => 'individual btn btn-warning') %>			
+						 		</div>
+						 	</td>
+							<td>
+								<%= worker.full_name %>
+							</td>
+							<td>
+								<%=  worker.cnic %>
+							</td>
+							<td>
+								<%= worker.phone %>
+							</td>
+							<br>
+					</table>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

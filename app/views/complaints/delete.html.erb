@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 complains delete">
+			<div class="btn btn-default"><%= link_to("Go Back",{:action => 'index'}, :class => 'back-to-index') %>
+			</div>
+			<h2>Delete Complaint</h2>
+			<%= form_for(:complain, url: {:action => 'destroy', id: @complain.id}) do |complain| %>
+			<p>Are you sure you want to delete this complain?</p>
+			<p class="reference-title"><%= @complain.title %></p>
+			<div class="form-buttons">
+				<%= submit_tag('Delete Complain') %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

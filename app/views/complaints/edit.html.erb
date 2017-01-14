@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="btn btn-default"><%= link_to("Go Back",{ action: 'index'}, class: 'back-to-index') %>			
+			</div>
+			<div>
+				<%= form_for(:complain, url: {action: 'update', id: @complain.id}, method: :put) do |complain| %>
+				<table class="table table-bordered">
+					<tr>
+						<th>Complain Title</th>
+						<td><%= complain.text_field(:title) %></td>
+					</tr>
+					<tr>
+						<th>Category</th>
+						<td><%= complain.text_field(:category) %></td>
+					</tr>
+					<tr>
+						<th>User ID/Name</th>
+						<td><%= complain.text_field(:user_id) %></td>
+					</tr>
+					<tr>
+						<th>SDO ID/Name</th>
+						<td><%= complain.text_field(:sdo_id) %></td>
+					</tr>
+					<tr>
+						<th>Worker ID/Name</th>
+						<td><%= complain.text_field(:worker_id) %></td>
+					</tr>
+					<tr>
+						<th>Status</th>
+						<td><%= complain.text_field(:status) %></td>
+					</tr>
+				</table>
+				<div class="form-button">
+					<%= submit_tag('Update Complain') %> 
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ComplaintManagementSystem</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+
+  	<div class="container">
+	  <div class="row">
+	    <div class="col-md-7">
+            <%= image_tag ('logo.png'), size: "50x50", alt: "Logo"%> 
+	      <span style="color: #25D872;font-size: 24px;margin-left: 5px;">UET Complaint Management and Maintenance System</span>
+	    </div>
+	    <div class="col-md-5 n
+        avbar" role='navigation'>
+        <ul class="nav nav-tabs ">
+          <li class="<%= 'active' if controller_name == 'complaints' %>">
+            <%= link_to "Complains", '/complaints', class: 'glyphicon glyphicon-list-alt' %>
+          </li>
+          <li class="<%= 'active' if controller_name == 'users' %>">
+            <%= link_to "Users", '/users/index', class: ' glyphicon glyphicon-user' %>
+          </li>
+          <li class="<%= 'active' if controller_name == 'sdos' %>">
+            <%= link_to "SDOs", '/sdos/index', class: ' glyphicon glyphicon-user' %>
+          </li>
+          <li class="<%= 'active' if controller_name == 'workers'%>">
+            <%= link_to "Workers", '/workers', class: ' glyphicon glyphicon-user' %>
+          </li>
+          <li>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+          </li>
+        </ul>
+	    </div>
+	  </div>
+    <hr>
+	</div>
+  <% if flash[:success] %>
+    <div class="notice alert alert-success"><%= flash[:success] %></div>
+  <% end %>
+  <% if flash[:error] %>
+    <div class="notice alert alert-danger"><%= flash[:error] %></div>
+  <% end %>
+  <% if flash[:new] %>
+    <div class="notice alert alert-warning"><%= flash[:new] %></div>
+  <% end %>
+
+
+    <%= yield %>
+  </body>
+</html>

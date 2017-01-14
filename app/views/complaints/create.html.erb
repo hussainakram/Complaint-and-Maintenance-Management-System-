@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div><%= link_to("Go Back",{:action => 'index'}, :class => 'btn btn-default') %>				
+			</div>
+			<div>
+				<%= form_for(:complaint, :url => {:action => 'create'}) do |complain| %>
+				<table class="table">
+					<tr>
+						<th>Complain Title</th>
+						<td><%= complain.text_field(:title) %></td>
+					</tr>
+					<tr>
+						<th>Category</th>
+						<td><%= complain.text_field(:category) %></td>
+					</tr>
+					<tr>
+						<th>User ID/Name</th>
+						<td><%= complain.text_field(:user_id) %></td>
+					</tr>
+					<tr>
+						<th>SDO ID/Name</th>
+						<td><%= complain.text_field(:sdo_id) %></td>
+					</tr>
+					<tr>
+						<th>Worker ID/Name</th>
+						<td><%= complain.text_field(:worker_id) %></td>
+					</tr>
+				</table>
+				<% end %>
+				<div class="form-button">
+					<%= submit_tag('Submit Complain') %> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

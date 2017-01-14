@@ -1,0 +1,43 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-10">
+		<%= form_for(:workers, url: {action: 'index', id: @worker.id}, method: :put) do |worker| %>	
+			<caption><h3>Complaints maintained by  
+				<!-- Split button -->
+				<div class='btn-group'>
+				  <button type='button' class='btn btn-success'><%= "#{@worker.full_name}" %></button>
+				  <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+				    <span class='caret'></span>
+				    <span class='sr-only'>Toggle Dropdown</span>
+				  </button>
+				  <ul class='dropdown-menu'>
+				    <li><%= link_to "Edit details", {:action => 'edit'}, :id => "worker_details" %>	</li>
+				  </ul>
+				</div>
+			</h3></caption>
+			<hr>
+			<table class="table table-hover table-bordered centre">
+				<th>Worker ID</th>
+				<th>Worker Name</th>
+				<th>Complaint ID</th>
+				<th>Title</th>
+				<th>Status</th>
+				<th>Complainer</th>
+				<th>Supervising SDO</th>
+				<% @worker_complaints.each do |complaint| %>
+				<tr>
+					<td><%= @worker.id %></td>
+					<td><%= @worker.full_name %></td>
+					<td><%= complaint.id %> </td>
+					<td><%= complaint.title %></td>
+					<td><%= complaint.status %> </td>
+					<td><%= complaint.user.first_name %></td>
+					<td><%= complaint.sdo.name %></td>
+				</tr>
+				<% end %>
+			</table> 
+		<% end %>
+		</div>
+	</div>
+</div>
