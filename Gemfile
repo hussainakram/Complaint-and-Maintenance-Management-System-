@@ -12,6 +12,8 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
+
+
 gem 'autoprefixer-rails'
 
 gem 'sass-rails', '~> 5.0'

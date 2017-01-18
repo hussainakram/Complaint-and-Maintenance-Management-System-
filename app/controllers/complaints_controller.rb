@@ -3,6 +3,7 @@ class ComplaintsController < ApplicationController
   #layout false
 
   def index
+    http_cache_forever(public: true) {}
     if current_user.user_type == 'operator'
       @complaints = Complaint.all
     else
@@ -11,6 +12,7 @@ class ComplaintsController < ApplicationController
   end
 
   def show
+    http_cache_forever(public: true) {}
     @complain = Complaint.find(params[:id])
     unless current_user.user_type == 'complainer' && current_user.complaints.where(id: @complain.id).count > 0
       redirect_to :root, notice: 'You don\'t have access to this page' && return
